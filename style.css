@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+main {
+    display: grid;
+    font-family:  'Poppins', sans-serif;
+    padding: 20px 10px ;
+}
+/*SECTION FORM*/
+#sectionForm {
+    background-color: #FFF159;
+    padding: 25px;
+}
+
+#sectionForm > form {  /*acomodando el form*/
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /*en flex se sua ga igual para espaciar elementos*/
+}
+
+#sectionForm > form > input {
+    padding: 10px 8px; /*el padding en Y y X*/
+    border-radius: 6px;
+    border: 1px solid rgb(161, 161, 161);
+    background-color: antiquewhite;
+}
+
+#sectionForm > form > button {
+    padding: 10px 8px; /*el padding en Y y X*/
+    border-radius: 100px;
+    border: none;
+    background-color: #2d3277 ;
+    color: white;
+}
+
+#sectionForm > form > button:hover {
+    transform: scale(0.98);
+    cursor: pointer;
+}
+
+#sectionForm > form > input:hover {
+    border: 1px solid blue;
+    
+}
+
+#sectionForm > h1 {
+    text-align: center; /*centro el h1*/
+    margin-bottom: 20px;
+}
+/*SECTION TABLAS*/
+#sectionTable > table {
+    width: 100%;    
+}
+#sectionTable > table,tr,td,th {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+#sectionTable > table > thead > tr> th {   
+   background-color: rgb(44, 44, 44);
+   color: white;
+   padding: 10px 0px;
+}
+
+#sectionTable > table > tbody > tr> td {
+    text-align: center;
+    padding: 6px 0px;
+}
+
+
+/*recomendar primero hacer responsive*/
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    main {
+        grid-template-columns: 1fr; /*p/definir columnas*/
+    }    
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    main {
+        grid-template-columns: 1fr 1.5fr; /*p/definir columnas*/
+    }    
+}
