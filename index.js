@@ -1,10 +1,16 @@
 const body = document.querySelector('body')
 const tbodyProducts = document.querySelector('#tbodyProducts')
-
+const btnAddUpdate = document.querySelector('#btnAddUpdate')
 /*El evento onload de Javascript se activa cuando se termina de cargar la página. Cuando necesitamos hacer cosas en el momento en el que la página haya terminado de cargar, podemos asociar un manejador de evento onload en la etiqueta <body*/
 body.onload = () => {
 
     const products = getProducts()
+    fillTable(products)
+
+//esta funcion nos crea la table con los productos
+function fillTable(products) {
+    let trs = []
+    
     products.forEach((p,i) => {
         //Icono de Borrar
         const iDelete = document.createElement('i')
@@ -39,10 +45,28 @@ body.onload = () => {
         tdPrice,
         tdStatus
         )
-        //Meter tr dentro de tbody
-        tbodyProducts.appendChild(trProduct)
+        //Guardar tr
+        trs.push(trProduct)//agregar un elemento al array de productos se utilizaba push
+
+        //tbodyProducts.appendChild(trProduct) //ESTO YA NO SIRVE XQ A LA LARGA SE VUELVE LENTO
     })
+    //meter trs al tbody
+    tbodyProducts.append(...trs) //Al anteponer los tres puntos que representan al spread operator transformamos la variable numeros (acordarrme del ejemplo que vi de un array con números y necesitaba conseguir el mayor) en una lista de argumentos
+}}
 
+btnAddUpdate.addEventListener('click', handerAddClick)
 
+function handerAddClick(e) {
+    const inProduct = document.querySelector('#inProduct')
+    const inStock = document.querySelector('#inStock')
+    const inPrice = document.querySelector('#inPrice')
+    const inStatus = document.querySelector('#inStatus')
+    //me traigo el valor de lo que va a estar adentro de cada input(produc,price,stock,status,etc)
+    const valueInProduct = inProduct.value
+    const valueInStock = inProduct.value
+    const valueInPrice = inProduct.value
+    const valueInStatus = inStatus.value
 
+    console.log(valueInPrice, valueInProduct);
+         e.preventDefault()
 }
