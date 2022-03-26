@@ -9,11 +9,15 @@ main {
     display: grid;
     font-family:  'Poppins', sans-serif;
     padding: 20px 10px ;
+    gap: 20px; /*espacio entre el grid y flex el cuadro y las column*/
 }
 /*SECTION FORM*/
 #sectionForm {
     background-color: #FFF159;
     padding: 25px;
+    border: 1px solid rgb(161, 161, 161);
+    border-radius: 12px;
+    box-shadow: 6px 6px 6px 6px rgb(191, 189, 189);
 }
 
 #sectionForm > form {  /*acomodando el form*/
@@ -58,12 +62,14 @@ main {
 #sectionTable > table,tr,td,th {
     border: 1px solid black;
     border-collapse: collapse;
+    cursor: pointer;
 }
 
 #sectionTable > table > thead > tr> th {   
    background-color: rgb(44, 44, 44);
    color: white;
    padding: 10px 0px;
+   
 }
 
 #sectionTable > table > tbody > tr> td {
